@@ -18,7 +18,7 @@ public class AdviceController {
 
     @PostMapping
     public AdviceResponse generate(@RequestBody AdviceRequest req) {
-        String advice = service.getAdvice(req.getText());
+        String advice = service.getAdvice(req.getText(), req.getMood());
         return new AdviceResponse(advice);
     }
 }

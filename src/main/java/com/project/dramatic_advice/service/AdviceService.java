@@ -13,7 +13,7 @@ public class AdviceService {
         this.gemini = gemini;
     }
 
-    public String getAdvice(String text) {
-        return gemini.rewrite(text);
+    public String getAdvice(String text, String mood) {
+        return gemini.rewrite(text, mood);
     }
 }

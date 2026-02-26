@@ -8,6 +8,8 @@
 
 /* Full screen soft pink gradient */
 body {
+  margin: 0;
+  overflow: hidden;
   min-height: 100vh;
   background: linear-gradient(135deg, #ffe6f0, #fff0f5);
 }
