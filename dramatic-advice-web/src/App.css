@@ -39,30 +39,41 @@ body {
 /* Main card */
 .app-container {
   position: relative;
-    z-index: 2;
-    background: white;
-    padding: 40px;
-    border-radius: 25px;
-    width: 550px;
-    max-width: calc(100vw - 90px); /* 10px padding on each side */
-    min-height: 400px;
-    max-height: 85vh;              /* Prevent infinite vertical growth */
-    overflow-y: auto;              /* Scroll INSIDE card */
-    transition: all 0.5s ease;
-    box-shadow: 0 25px 60px rgba(255, 182, 193, 0.45);
-    text-align: center;
+  z-index: 2;
+  background: white;
+  border-radius: 25px;
 
-    background: white;
-    box-shadow: 0 25px 60px rgba(255, 182, 193, 0.4);
+  padding: 40px 30px;
+
+  width: 550px;
+  max-width: 90vw;
+
+  min-height: 420px;
+  max-height: 85vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: all 0.4s ease;
+
+  box-shadow: 0 25px 60px rgba(255, 182, 193, 0.4);
+  text-align: center;
 }
 
 .app-container.expanded {
-  width: calc(100vw - 20px);
+  max-height: 85vh;
+  overflow-y: auto;
 
-  /* Glassmorphism effect */
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  /* DO NOT jump to full width */
+  width: 550px;
+
+  /* Only allow slight width growth if needed */
+  max-width: 95vw;
+
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
   border: 1px solid rgba(255, 255, 255, 0.4);
 
@@ -120,18 +131,20 @@ button:hover {
 /* Advice box */
 .advice-box {
   margin-top: 25px;
-    padding: 20px;
-    border-radius: 15px;
-    font-style: italic;
-    color: #333;
+  padding: 20px;
+  border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
 
-    max-height: 200px;
-    overflow-y: auto;
-    text-align: left;
+  text-align: left;
+  animation: fadeIn 0.4s ease;
+
+  /* Let content grow naturally */
+  min-height: 60px;
+  max-height: none;
+
+  line-height: 1.6;
 }
 
 .petal-container {
