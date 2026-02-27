@@ -39,6 +39,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [mood, setMood] = useState(moodOptions[0]);
   const [showMoodMenu, setShowMoodMenu] = useState(false);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const moodRef = useRef<HTMLDivElement>(null);
 
@@ -100,7 +101,7 @@ export default function App() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:8080/api/advice", {
+      const res = await fetch("${API_URL}/api/advice", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, mood: mood.name })
