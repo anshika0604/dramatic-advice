@@ -5,9 +5,8 @@ import com.project.dramatic_advice.dto.AdviceResponse;
 import com.project.dramatic_advice.service.AdviceService;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/api/advice")
+@RequestMapping("${API_URL}/api/advice")
 public class AdviceController {
 
     private final AdviceService service;
