@@ -77,7 +77,9 @@ export default function App() {
       particle.style.left = Math.random() * 100 + "vw";
       particle.style.animationDuration = 4 + Math.random() * 4 + "s";
 
-      container.appendChild(particle);
+      if (container) {
+        container.appendChild(particle);
+      }
 
       setTimeout(() => {
         particle.remove();
