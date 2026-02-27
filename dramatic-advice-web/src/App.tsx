@@ -101,7 +101,7 @@ export default function App() {
     setLoading(true);
 
     try {
-      const res = await fetch("${API_URL}/api/advice", {
+      const res = await fetch(`${API_URL}/api/advice`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, mood: mood.name })
