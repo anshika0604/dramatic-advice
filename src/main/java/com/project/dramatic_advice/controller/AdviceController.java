@@ -6,7 +6,7 @@ import com.project.dramatic_advice.service.AdviceService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("${API_URL}/api/advice")
+@RequestMapping("/api/advice")
 public class AdviceController {
 
     private final AdviceService service;
